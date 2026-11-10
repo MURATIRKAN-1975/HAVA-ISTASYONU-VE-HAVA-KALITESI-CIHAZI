@@ -1,0 +1,496 @@
+CCS PCH C Compiler, Version 5.049, 5967               10-Kas-26 16:54
+
+               Filename:   C:\Users\murat\OneDrive\Desktop\HG-2A-PIC18F452 KART\PIC18F452_ST7735-TMP117.lst
+
+               ROM used:   808 bytes (2%)
+                           Largest free fragment is 31960
+               RAM used:   9 (1%) at main() level
+                           31 (2%) worst case
+               Stack used: 2 locations
+               Stack size: 31
+
+*
+0000:  GOTO   02C6
+.................... //    CCS - C DERLEYÝCÝ PIC18F452 HG-2A HAVA ÝSTASYONU VE HAVA KALÝTESÝ CÝHAZI 
+.................... //     MURAT IRKAN 2026/11  TMP117 HASSAS SICAKLIK SENSÖRÜ VE EKRAN ST7735 SITRONIX 
+.................... #include <18F452.h> 
+.................... //////////// Standard Header file for the PIC18F452 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F452 
+*
+00E2:  MOVLW  8E
+00E4:  MOVWF  00
+00E6:  MOVFF  12,01
+00EA:  MOVFF  11,02
+00EE:  CLRF   03
+00F0:  BTFSS  12.7
+00F2:  BRA    00FE
+00F4:  COMF   01,F
+00F6:  COMF   02,F
+00F8:  INCF   02,F
+00FA:  BNZ   00FE
+00FC:  INCF   01,F
+00FE:  MOVF   01,F
+0100:  BNZ   0114
+0102:  MOVFF  02,01
+0106:  CLRF   02
+0108:  MOVLW  08
+010A:  SUBWF  00,F
+010C:  MOVF   01,F
+010E:  BNZ   0114
+0110:  CLRF   00
+0112:  BRA    0128
+0114:  BCF    FD8.0
+0116:  BTFSC  01.7
+0118:  BRA    0122
+011A:  RLCF   02,F
+011C:  RLCF   01,F
+011E:  DECF   00,F
+0120:  BRA    0114
+0122:  BTFSC  12.7
+0124:  BRA    0128
+0126:  BCF    01.7
+0128:  GOTO   0276 (RETURN)
+012C:  MOVF   15,W
+012E:  BTFSC  FD8.2
+0130:  BRA    0214
+0132:  MOVWF  00
+0134:  MOVF   19,W
+0136:  BTFSC  FD8.2
+0138:  BRA    0214
+013A:  ADDWF  00,F
+013C:  BNC   0146
+013E:  MOVLW  81
+0140:  ADDWF  00,F
+0142:  BC    0214
+0144:  BRA    014E
+0146:  MOVLW  7F
+0148:  SUBWF  00,F
+014A:  BNC   0214
+014C:  BZ    0214
+014E:  MOVFF  16,1D
+0152:  MOVF   1A,W
+0154:  XORWF  1D,F
+0156:  BSF    16.7
+0158:  BSF    1A.7
+015A:  MOVF   18,W
+015C:  MULWF  1C
+015E:  MOVFF  FF4,1F
+0162:  MOVF   17,W
+0164:  MULWF  1B
+0166:  MOVFF  FF4,03
+016A:  MOVFF  FF3,1E
+016E:  MULWF  1C
+0170:  MOVF   FF3,W
+0172:  ADDWF  1F,F
+0174:  MOVF   FF4,W
+0176:  ADDWFC 1E,F
+0178:  MOVLW  00
+017A:  ADDWFC 03,F
+017C:  MOVF   18,W
+017E:  MULWF  1B
+0180:  MOVF   FF3,W
+0182:  ADDWF  1F,F
+0184:  MOVF   FF4,W
+0186:  ADDWFC 1E,F
+0188:  MOVLW  00
+018A:  CLRF   02
+018C:  ADDWFC 03,F
+018E:  ADDWFC 02,F
+0190:  MOVF   16,W
+0192:  MULWF  1C
+0194:  MOVF   FF3,W
+0196:  ADDWF  1E,F
+0198:  MOVF   FF4,W
+019A:  ADDWFC 03,F
+019C:  MOVLW  00
+019E:  ADDWFC 02,F
+01A0:  MOVF   16,W
+01A2:  MULWF  1B
+01A4:  MOVF   FF3,W
+01A6:  ADDWF  03,F
+01A8:  MOVF   FF4,W
+01AA:  ADDWFC 02,F
+01AC:  MOVLW  00
+01AE:  CLRF   01
+01B0:  ADDWFC 01,F
+01B2:  MOVF   18,W
+01B4:  MULWF  1A
+01B6:  MOVF   FF3,W
+01B8:  ADDWF  1E,F
+01BA:  MOVF   FF4,W
+01BC:  ADDWFC 03,F
+01BE:  MOVLW  00
+01C0:  ADDWFC 02,F
+01C2:  ADDWFC 01,F
+01C4:  MOVF   17,W
+01C6:  MULWF  1A
+01C8:  MOVF   FF3,W
+01CA:  ADDWF  03,F
+01CC:  MOVF   FF4,W
+01CE:  ADDWFC 02,F
+01D0:  MOVLW  00
+01D2:  ADDWFC 01,F
+01D4:  MOVF   16,W
+01D6:  MULWF  1A
+01D8:  MOVF   FF3,W
+01DA:  ADDWF  02,F
+01DC:  MOVF   FF4,W
+01DE:  ADDWFC 01,F
+01E0:  INCF   00,F
+01E2:  BTFSC  01.7
+01E4:  BRA    01F0
+01E6:  RLCF   1E,F
+01E8:  RLCF   03,F
+01EA:  RLCF   02,F
+01EC:  RLCF   01,F
+01EE:  DECF   00,F
+01F0:  MOVLW  00
+01F2:  BTFSS  1E.7
+01F4:  BRA    020A
+01F6:  INCF   03,F
+01F8:  ADDWFC 02,F
+01FA:  ADDWFC 01,F
+01FC:  MOVF   01,W
+01FE:  BNZ   020A
+0200:  MOVF   02,W
+0202:  BNZ   020A
+0204:  MOVF   03,W
+0206:  BNZ   020A
+0208:  INCF   00,F
+020A:  BTFSC  1D.7
+020C:  BSF    01.7
+020E:  BTFSS  1D.7
+0210:  BCF    01.7
+0212:  BRA    021C
+0214:  CLRF   00
+0216:  CLRF   01
+0218:  CLRF   02
+021A:  CLRF   03
+021C:  GOTO   02A2 (RETURN)
+....................  
+.................... #list 
+....................  
+.................... #fuses HS,NOWDT,NOPROTECT,NOLVP// SÝGORTA AYARLARI 
+.................... #use delay(crystal=20000000) // 20 MHz KRÝSTAL BAÐLANIYOR.! 
+*
+0004:  CLRF   FEA
+0006:  MOVLW  0A
+0008:  MOVWF  FE9
+000A:  MOVF   FEF,W
+000C:  BZ    0028
+000E:  MOVLW  06
+0010:  MOVWF  01
+0012:  CLRF   00
+0014:  DECFSZ 00,F
+0016:  BRA    0014
+0018:  DECFSZ 01,F
+001A:  BRA    0012
+001C:  MOVLW  7B
+001E:  MOVWF  00
+0020:  DECFSZ 00,F
+0022:  BRA    0020
+0024:  DECFSZ FEF,F
+0026:  BRA    000E
+0028:  RETURN 0
+....................  
+.................... // PIC18F452 TMP117 SENSOR SDA->C4 PÝN VE C3 SCL BAGLANIYOR.! 
+.................... #use i2c(Master, Fast=400000, sda=PIN_C4, scl=PIN_C3, force_hw) 
+*
+00AA:  BCF    FC6.7
+00AC:  BCF    F9E.3
+00AE:  MOVFF  11,FC9
+00B2:  MOVLW  02
+00B4:  BTFSC  FC6.7
+00B6:  BRA    00C2
+00B8:  BTFSS  F9E.3
+00BA:  BRA    00B8
+00BC:  MOVLW  00
+00BE:  BTFSC  FC5.6
+00C0:  MOVLW  01
+00C2:  MOVWF  01
+00C4:  RETURN 0
+00C6:  BCF    FC6.6
+00C8:  BSF    FC5.3
+00CA:  BTFSC  FC5.3
+00CC:  BRA    00CA
+00CE:  BTFSC  00.0
+00D0:  BCF    FC5.5
+00D2:  BTFSS  00.0
+00D4:  BSF    FC5.5
+00D6:  BSF    FC5.4
+00D8:  BTFSC  FC5.4
+00DA:  BRA    00D8
+00DC:  MOVFF  FC9,01
+00E0:  RETURN 0
+....................  
+.................... // ST7735  LCD EKRAN I2C BAGLANTI PÝNLERÝ 
+.................... #define ST7735_CS   PIN_C0 
+.................... #define ST7735_RST  PIN_C1 
+.................... #define ST7735_DC   PIN_C2 
+.................... #define ST7735_SDA  PIN_C5 
+.................... #define ST7735_SCL  PIN_C3 
+....................  
+.................... // DONANIMSAL SPI BAGLANTISI ST7735 
+.................... #use spi(MASTER, SPI1, MODE=0, BITS=8, STREAM=SPI_TFT) 
+*
+002A:  MOVF   FC9,W
+002C:  MOVFF  0A,FC9
+0030:  RRCF   FC7,W
+0032:  BNC   0030
+0034:  MOVFF  FC9,01
+0038:  RETURN 0
+.................... // TMP117 HAFIZA ADRESLERÝ 
+.................... #define TMP117_ADDR_WRITE 0x90 
+.................... #define TMP117_ADDR_READ  0x91 
+.................... #define TMP117_REG_TEMP   0x00 
+....................  
+.................... // FONKSÝYON TANIMLARI... 
+.................... void st7735_write_cmd(int8 cmd); 
+.................... void st7735_write_data(int8 data); 
+.................... void st7735_init(void); 
+.................... float tmp117_read_temperature(void);// TMP117 SICAKLIK  OKUYOR... 
+....................  
+.................... void main() { 
+*
+02C6:  CLRF   FF8
+02C8:  BCF    FD0.7
+02CA:  BSF    F94.3
+02CC:  BSF    F94.4
+02CE:  MOVLW  0C
+02D0:  MOVWF  FC8
+02D2:  MOVLW  28
+02D4:  MOVWF  FC6
+02D6:  BCF    FC7.7
+02D8:  BCF    FC7.6
+02DA:  BCF    FC6.5
+02DC:  MOVLW  40
+02DE:  MOVWF  FC7
+02E0:  MOVLW  21
+02E2:  MOVWF  FC6
+02E4:  BCF    F94.5
+02E6:  BSF    F94.4
+02E8:  BCF    F94.3
+02EA:  BSF    FC1.0
+02EC:  BSF    FC1.1
+02EE:  BSF    FC1.2
+02F0:  BCF    FC1.3
+02F2:  CLRF   08
+02F4:  CLRF   07
+02F6:  CLRF   06
+02F8:  CLRF   05
+....................    float tempC = 0.0; 
+....................     
+....................    setup_adc_ports(NO_ANALOGS); 
+02FA:  BSF    FC1.0
+02FC:  BSF    FC1.1
+02FE:  BSF    FC1.2
+0300:  BCF    FC1.3
+....................    st7735_init(); 
+0302:  BRA    0064
+....................     
+....................    while(TRUE) { 
+....................       tempC = tmp117_read_temperature(); 
+0304:  BRA    0220
+0306:  MOVFF  03,08
+030A:  MOVFF  02,07
+030E:  MOVFF  01,06
+0312:  MOVFF  00,05
+....................        
+....................       // Update data every 500ms 
+....................       delay_ms(500); 
+0316:  MOVLW  02
+0318:  MOVWF  09
+031A:  MOVLW  FA
+031C:  MOVWF  0A
+031E:  RCALL  0004
+0320:  DECFSZ 09,F
+0322:  BRA    031A
+0324:  BRA    0304
+....................    } 
+.................... } 
+....................  
+0326:  SLEEP 
+.................... // Read 16-bit Temperature from TMP117 
+.................... float tmp117_read_temperature(void) { 
+*
+0220:  CLRF   09
+0222:  CLRF   0A
+0224:  CLRF   0C
+0226:  CLRF   0B
+0228:  CLRF   10
+022A:  CLRF   0F
+022C:  CLRF   0E
+022E:  CLRF   0D
+....................    int8 msb = 0, lsb = 0; 
+....................    signed int16 raw_temp = 0; 
+....................    float celsius = 0.0; 
+....................     
+....................    i2c_start(); 
+0230:  BSF    FC5.0
+0232:  BTFSC  FC5.0
+0234:  BRA    0232
+....................    i2c_write(TMP117_ADDR_WRITE); 
+0236:  MOVLW  90
+0238:  MOVWF  11
+023A:  RCALL  00AA
+....................    i2c_write(TMP117_REG_TEMP); 
+023C:  CLRF   11
+023E:  RCALL  00AA
+....................    i2c_start(); 
+0240:  BSF    FC5.1
+0242:  BTFSC  FC5.1
+0244:  BRA    0242
+....................    i2c_write(TMP117_ADDR_READ); 
+0246:  MOVLW  91
+0248:  MOVWF  11
+024A:  RCALL  00AA
+....................    msb = i2c_read(1); // ACK 
+024C:  MOVLW  01
+024E:  MOVWF  00
+0250:  RCALL  00C6
+0252:  MOVFF  01,09
+....................    lsb = i2c_read(0); // NACK 
+0256:  CLRF   00
+0258:  RCALL  00C6
+025A:  MOVFF  01,0A
+....................    i2c_stop(); 
+025E:  BSF    FC5.2
+0260:  BTFSC  FC5.2
+0262:  BRA    0260
+....................     
+....................    raw_temp = make16(msb, lsb); 
+0264:  MOVFF  09,0C
+0268:  MOVFF  0A,0B
+....................    // 1 LSB = 0.0078125 Â°C (or raw_temp / 128.0) 
+....................    celsius = (float)raw_temp * 0.0078125; 
+026C:  MOVFF  0C,12
+0270:  MOVFF  0B,11
+0274:  BRA    00E2
+0276:  MOVFF  03,14
+027A:  MOVFF  02,13
+027E:  MOVFF  01,12
+0282:  MOVFF  00,11
+0286:  MOVFF  03,18
+028A:  MOVFF  02,17
+028E:  MOVFF  01,16
+0292:  MOVFF  00,15
+0296:  CLRF   1C
+0298:  CLRF   1B
+029A:  CLRF   1A
+029C:  MOVLW  78
+029E:  MOVWF  19
+02A0:  BRA    012C
+02A2:  MOVFF  03,10
+02A6:  MOVFF  02,0F
+02AA:  MOVFF  01,0E
+02AE:  MOVFF  00,0D
+....................     
+....................    return celsius; 
+02B2:  MOVFF  0D,00
+02B6:  MOVFF  0E,01
+02BA:  MOVFF  0F,02
+02BE:  MOVFF  10,03
+02C2:  GOTO   0306 (RETURN)
+.................... } 
+....................  
+.................... // Low-level SPI helper for ST7735 
+.................... void st7735_write_cmd(int8 cmd) { 
+....................    output_low(ST7735_DC); 
+*
+003A:  BCF    F94.2
+003C:  BCF    F8B.2
+....................    output_low(ST7735_CS); 
+003E:  BCF    F94.0
+0040:  BCF    F8B.0
+....................    spi_xfer(SPI_TFT, cmd); 
+0042:  MOVFF  09,0A
+0046:  RCALL  002A
+....................    output_high(ST7735_CS); 
+0048:  BCF    F94.0
+004A:  BSF    F8B.0
+004C:  RETURN 0
+.................... } 
+....................  
+.................... void st7735_write_data(int8 data) { 
+....................    output_high(ST7735_DC); 
+004E:  BCF    F94.2
+0050:  BSF    F8B.2
+....................    output_low(ST7735_CS); 
+0052:  BCF    F94.0
+0054:  BCF    F8B.0
+....................    spi_xfer(SPI_TFT, data); 
+0056:  MOVFF  09,0A
+005A:  RCALL  002A
+....................    output_high(ST7735_CS); 
+005C:  BCF    F94.0
+005E:  BSF    F8B.0
+0060:  GOTO   00A0 (RETURN)
+.................... } 
+....................  
+.................... void st7735_init(void) { 
+....................    output_high(ST7735_CS); 
+0064:  BCF    F94.0
+0066:  BSF    F8B.0
+....................    output_low(ST7735_RST); 
+0068:  BCF    F94.1
+006A:  BCF    F8B.1
+....................    delay_ms(50); 
+006C:  MOVLW  32
+006E:  MOVWF  0A
+0070:  RCALL  0004
+....................    output_high(ST7735_RST); 
+0072:  BCF    F94.1
+0074:  BSF    F8B.1
+....................    delay_ms(50); 
+0076:  MOVLW  32
+0078:  MOVWF  0A
+007A:  RCALL  0004
+....................     
+....................    st7735_write_cmd(0x01); // SWRESET (Software Reset) 
+007C:  MOVLW  01
+007E:  MOVWF  09
+0080:  RCALL  003A
+....................    delay_ms(150); 
+0082:  MOVLW  96
+0084:  MOVWF  0A
+0086:  RCALL  0004
+....................    st7735_write_cmd(0x11); // SLPOUT (Exit Sleep) 
+0088:  MOVLW  11
+008A:  MOVWF  09
+008C:  RCALL  003A
+....................    delay_ms(120); 
+008E:  MOVLW  78
+0090:  MOVWF  0A
+0092:  RCALL  0004
+....................    st7735_write_cmd(0x3A); // COLMOD (Color Format) 
+0094:  MOVLW  3A
+0096:  MOVWF  09
+0098:  RCALL  003A
+....................    st7735_write_data(0x05); // 16-bit/pixel (RGB565) 
+009A:  MOVLW  05
+009C:  MOVWF  09
+009E:  BRA    004E
+....................    st7735_write_cmd(0x29); // DISPON (Display On) 
+00A0:  MOVLW  29
+00A2:  MOVWF  09
+00A4:  RCALL  003A
+00A6:  GOTO   0304 (RETURN)
+.................... } 
+
+Configuration Fuses:
+   Word  1: 2200   HS NOOSCSEN
+   Word  2: 0E0E   PUT BROWNOUT BORV20 NOWDT WDT128
+   Word  3: 0100   CCP2C1
+   Word  4: 0081   STVREN NOLVP NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

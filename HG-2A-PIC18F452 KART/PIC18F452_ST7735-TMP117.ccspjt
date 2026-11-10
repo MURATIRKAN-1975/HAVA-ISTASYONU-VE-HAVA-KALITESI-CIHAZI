@@ -1,0 +1,17 @@
+[PROJECT]
+Target=PIC18F452_ST7735-TMP117.hex
+Processor_Text=PIC18F452
+CCSVersion=5.049
+Compiler=PCH
+[Target Data]
+FileList=PIC18F452_ST7735-TMP117.c
+[PIC18F452_ST7735-TMP117.c]
+Type=4
+[mru-list]
+1=PIC18F452_ST7735-TMP117.c
+[Units]
+Count=1
+1=PIC18F452_ST7735-TMP117 (main)
+
+[defines]
+buildcount=1

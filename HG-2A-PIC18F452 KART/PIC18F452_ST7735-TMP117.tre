@@ -1,0 +1,27 @@
+ÀÄPIC18F452_ST7735-TMP117
+   ÀÄmain  0/98  Ram=5
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄst7735_init  0/70  Ram=0
+      ³  ÃÄ@delay_ms1  0/38  Ram=1
+      ³  ÃÄ@delay_ms1  0/38  Ram=1
+      ³  ÃÄst7735_write_cmd  0/20  Ram=1
+      ³  ³  ÀÄ@SPI_XFER_1_8  0/16  Ram=3
+      ³  ÃÄ@delay_ms1  0/38  Ram=1
+      ³  ÃÄst7735_write_cmd  0/20  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄ@delay_ms1  0/38  Ram=1
+      ³  ÃÄst7735_write_cmd  0/20  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄst7735_write_data  0/22  Ram=1
+      ³  ³  ÀÄ@SPI_XFER_1_8  0/16  Ram=3
+      ³  ÀÄst7735_write_cmd  0/20  Ram=1
+      ³     ÀÄ*
+      ÃÄtmp117_read_temperature  0/166  Ram=12
+      ³  ÃÄ@I2C_WRITEU_1  0/28  Ram=1
+      ³  ÃÄ@I2C_WRITEU_1  0/28  Ram=1
+      ³  ÃÄ@I2C_WRITEU_1  0/28  Ram=1
+      ³  ÃÄ@I2C_READU_1  0/28  Ram=1
+      ³  ÃÄ@I2C_READU_1  0/28  Ram=1
+      ³  ÃÄ@SITOF  0/74  Ram=2
+      ³  ÀÄ@MULFF  0/244  Ram=11
+      ÀÄ@delay_ms1  0/38  Ram=1

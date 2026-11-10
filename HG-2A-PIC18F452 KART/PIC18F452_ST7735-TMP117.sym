@@ -1,0 +1,93 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005-008 main.tempC
+009     st7735_write_data.data
+009     tmp117_read_temperature.msb
+009     st7735_write_cmd.cmd
+009     main.@SCRATCH1
+00A     @SPI_XFER_1_8.P1
+00A     @delay_ms1.P2
+00A     tmp117_read_temperature.lsb
+00B-00C tmp117_read_temperature.raw_temp
+00D-010 tmp117_read_temperature.celsius
+011-012 @SITOF.P1
+011     @I2C_READU_1.P2
+011     @I2C_WRITEU_1.P3
+011     tmp117_read_temperature.@SCRATCH1
+012     tmp117_read_temperature.@SCRATCH2
+013     tmp117_read_temperature.@SCRATCH3
+014     tmp117_read_temperature.@SCRATCH4
+015-018 @MULFF.P1
+019-01C @MULFF.P1
+01D     @MULFF.@SCRATCH1
+01E     @MULFF.@SCRATCH2
+01F     @MULFF.@SCRATCH3
+F83     PSP_DATA
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @delay_ms1
+00002A  @SPI_XFER_1_8
+00003A  st7735_write_cmd
+00004E  st7735_write_data
+000064  st7735_init
+0000AA  @I2C_WRITEU_1
+0000C6  @I2C_READU_1
+0000E2  @SITOF
+00012C  @MULFF
+000220  tmp117_read_temperature
+0002C6  main
+0002C6  @cinit1
+0002F2  @cinit2
+
+Project Directory:
+    C:\Users\murat\OneDrive\Desktop\HG-2A-PIC18F452 KART\
+
+Project Files:
+    PIC18F452_ST7735-TMP117.c                               [10-Kas-26 16:55  CRC=3C07A09F]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\18F452.h [08-Eyl-15 15:15  CRC=FF951615]
+
+Source signature=3B31CCC9
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=2068
+
+Units:
+    PIC18F452_ST7735-TMP117 (main)
+
+Compiler Settings:
+    Processor:      PIC18F452
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   PIC18F452_ST7735-TMP117.xsym
+    Errors:      PIC18F452_ST7735-TMP117.err
+    Ext Symbols: PIC18F452_ST7735-TMP117.esym
+    INHX32:      PIC18F452_ST7735-TMP117.hex
+    Symbols:     PIC18F452_ST7735-TMP117.sym
+    List:        PIC18F452_ST7735-TMP117.lst
+    Debug/COFF:  PIC18F452_ST7735-TMP117.cof
+    Project:     PIC18F452_ST7735-TMP117.ccspjt
+    Call Tree:   PIC18F452_ST7735-TMP117.tre
+    Statistics:  PIC18F452_ST7735-TMP117.STA
