@@ -1,0 +1,54 @@
+
+ROM used:   812/32768 (2%)
+            812/32768 (2%) including unused fragments
+
+            0.9 Average locations per line
+            21.9 Average locations per statement
+
+RAM used:   9/2048 (0%) at main() level
+            31/2048 (2%) worst case
+
+Stack used: 2 worst case (2 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   96    37 100  PIC18F452_ST7735-TMP117.c
+  779     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Devices\18F2550.h
+----- -----
+  875    37 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     38   2    1             @delay_ms1
+0     28   2    1             @I2C_WRITEU_1
+0     28   2    1    250  1.4  @I2C_READU_1
+0     16   1    3    250  1.4  @SPI_XFER_1_8
+0    102   6    5    115  2.0  main
+0    166  10   12    414  3.3  tmp117_read_temperature
+0     74   5    2    250  1.4  @SITOF
+0    244  15   11    250  1.4  @MULFF
+0     20   1    1     90  1.7  st7735_write_cmd
+0     22   1    1     90  1.7  st7735_write_data
+0     70   4    0    250  1.4  st7735_init
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               9
+    Statements              37
+    Comments                167
+    Volume (V)              3199
+    Difficulty (D)          15.7
+    Effort to implement (E) 50305
+    Time to implement (T)   47 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    137
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE   808  31956  
+
+
+
