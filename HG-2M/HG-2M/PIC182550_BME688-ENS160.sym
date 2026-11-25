@@ -1,0 +1,221 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     aqi
+005-006 tvoc
+007-008 eco2
+009-00A par_t1
+00B-00C par_t2
+00D     par_t3
+00E-011 bme_temp
+012-013 bme_hum_raw
+014-015 @sprintf_string
+016-019 @PRINTF_L32D_641FPFPF.P1
+016-01A ens160_read_data.buf
+016     @PRINTF_U_641.P1
+016-017 @PRINTF_LU_641.P2
+016     lcd_init.i
+016-018 bme688_init.cal
+016     @PSTRINGCN_641.P1
+016-01D bme688_read_data.raw
+016     MAIN.@SCRATCH1
+016     @PSTRINGC_641.@SCRATCH1
+017-01A lcd_init.LCD_INIT_STRING
+017     @PRINTF_U_641.P1
+017     @PSTRINGC_641.@SCRATCH2
+017     @PSTRINGCN_641.@SCRATCH1
+018     @DIV88.P1
+018     @PSTRINGCN_641.@SCRATCH2
+018     @PRINTF_LU_641.@SCRATCH1
+019     @DIV88.P1
+019     @PRINTF_LU_641.@SCRATCH2
+01A     @PRINTF_L32D_641FPFPF.P1
+01A     @DIV88.@SCRATCH1
+01A     @PRINTF_LU_641.@SCRATCH3
+01B     lcd_init.@SCRATCH1
+01B     @PRINTF_L32D_641FPFPF.@SCRATCH1
+01B     @PRINTF_LU_641.@SCRATCH4
+01C     @PRINTF_L32D_641FPFPF.@SCRATCH2
+01C     @PRINTF_LU_641.@SCRATCH5
+01D     @PRINTF_L32D_641FPFPF.@SCRATCH3
+01D     @PRINTF_LU_641.@SCRATCH6
+01E-021 bme688_read_data.temp_adc
+01E     @PRINTF_L32D_641FPFPF.@SCRATCH4
+01E     @PRINTF_LU_641.@SCRATCH7
+01F     @PRINTF_L32D_641FPFPF.@SCRATCH5
+020     @PRINTF_L32D_641FPFPF.@SCRATCH6
+021     @PRINTF_L32D_641FPFPF.@SCRATCH7
+022-025 bme688_read_data.var1
+022     @PRINTF_L32D_641FPFPF.@SCRATCH8
+023-026 @FTOSD.P1
+023-026 @DIV3232.P2
+023     lcd_putc.c
+024     lcd_gotoxy.x
+025     lcd_gotoxy.y
+026-029 bme688_read_data.var2
+026     lcd_gotoxy.address
+027-02A @DIV3232.P1
+027     lcd_gotoxy.@SCRATCH1
+027     @FTOSD.@SCRATCH1
+028     lcd_send_byte.address
+029     lcd_send_byte.n
+02A     lcd_read_byte.low
+02A-02D bme688_read_data.t_fine
+02A     lcd_send_byte.@SCRATCH1
+02B     lcd_send_nibble.n
+02B     lcd_read_byte.high
+02B     @DIV3232.@SCRATCH1
+02C     lcd_read_nibble.n
+02C     lcd_read_byte.@SCRATCH1
+02C     @DIV3232.@SCRATCH2
+02D     lcd_read_nibble.@SCRATCH1
+02D     @DIV3232.@SCRATCH3
+02E     i2c_write_reg.dev_addr
+02E     @delay_ms1.P1
+02E     i2c_read_bytes.dev_addr_w
+02E     bme688_read_data.@SCRATCH1
+02E     @DIV3232.@SCRATCH4
+02F     i2c_read_bytes.reg_addr
+02F     i2c_write_reg.reg_addr
+02F     bme688_read_data.@SCRATCH2
+02F     @DIV3232.@SCRATCH5
+030     i2c_write_reg.data
+030-031 i2c_read_bytes.buffer
+030     bme688_read_data.@SCRATCH3
+031     bme688_read_data.@SCRATCH4
+032-035 @DTOF.P1
+032     i2c_read_bytes.len
+032-033 @SITOF.P1
+032     bme688_read_data.@SCRATCH5
+033     i2c_read_bytes.i
+033     bme688_read_data.@SCRATCH6
+034     i2c_read_bytes.@SCRATCH1
+034     bme688_read_data.@SCRATCH7
+035     @I2C_WRITE_1.P1
+035     i2c_read_bytes.@SCRATCH2
+035     bme688_read_data.@SCRATCH8
+036-037 @ITOF.P1
+036-039 @ADDFF.P2
+036-039 @MULFF.P3
+036     @I2C_READ_1.P4
+036     bme688_read_data.@SCRATCH9
+037     @I2C_READ_1.@SCRATCH1
+037     bme688_read_data.@SCRATCH10
+038     @I2C_READ_1.@SCRATCH2
+038     bme688_read_data.@SCRATCH11
+039     bme688_read_data.@SCRATCH12
+03A-03D @ADDFF.P1
+03A-03D @MULFF.P2
+03A-03D @DIVFF.P3
+03E-041 @DIVFF.P1
+03E     @ADDFF.@SCRATCH1
+03E     @MULFF.@SCRATCH1
+03F     @ADDFF.@SCRATCH2
+03F     @MULFF.@SCRATCH2
+040     @ADDFF.@SCRATCH3
+040     @MULFF.@SCRATCH3
+041     @ADDFF.@SCRATCH4
+042     @DIVFF.@SCRATCH1
+042     @ADDFF.@SCRATCH5
+043     @DIVFF.@SCRATCH2
+043     @ADDFF.@SCRATCH6
+044     @DIVFF.@SCRATCH3
+044     @ADDFF.@SCRATCH7
+045     @DIVFF.@SCRATCH4
+045     @ADDFF.@SCRATCH8
+046     @DIVFF.@SCRATCH5
+047     @DIVFF.@SCRATCH6
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @const700.call
+000016  @const705.call
+000028  @const706.call
+00003A  @const723.call
+00004A  @delay_ms1
+000070  lcd_send_nibble
+0000B4  lcd_read_nibble
+000106  lcd_read_byte
+000154  lcd_send_byte
+00019A  lcd_init
+000216  lcd_gotoxy
+000238  lcd_putc
+000288  @PSTRINGC_641
+0002A8  @I2C_WRITE_1
+0002F0  i2c_write_reg
+00032A  ens160_init
+000348  @I2C_READ_1
+000390  i2c_read_bytes
+000424  bme688_init
+000480  ens160_read_data
+0004AE  @DTOF
+0004E2  @DIVFF
+00063C  @ITOF
+000672  @ADDFF
+0008DC  @SITOF
+000924  @MULFF
+000A16  bme688_read_data
+000E66  @PSTRINGCN_641
+000E86  @FTOSD
+000EC6  @DIV3232
+000F54  @PRINTF_L32D_641FPFPF
+0010D6  @DIV88
+0010FE  @PRINTF_U_641
+00116C  @PRINTF_LU_641
+001228  @cinit1
+001228  MAIN
+001252  @cinit2
+
+Project Directory:
+    C:\Users\murat\Desktop\HG-2M\
+
+Project Files:
+    PIC182550_BME688-ENS160.c                               [25-Kas-26 06:39  CRC=477E70B4]
+    ..\..\..\..\Program Files (x86)\PICC\Devices\18F2550.h  [08-Eyl-15 15:16  CRC=64A9B464]
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c      [19-Eyl-13 16:38  CRC=D1A6378A]
+
+Source signature=4F74942C
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=904E
+
+Units:
+    PIC182550_BME688-ENS160 (main)
+
+Compiler Settings:
+    Processor:      PIC18F2550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   PIC182550_BME688-ENS160.xsym
+    Errors:      PIC182550_BME688-ENS160.err
+    Ext Symbols: PIC182550_BME688-ENS160.esym
+    INHX32:      PIC182550_BME688-ENS160.hex
+    Symbols:     PIC182550_BME688-ENS160.sym
+    List:        PIC182550_BME688-ENS160.lst
+    Debug/COFF:  PIC182550_BME688-ENS160.cof
+    Project:     PIC182550_BME688-ENS160.ccspjt
+    Call Tree:   PIC182550_BME688-ENS160.tre
+    Statistics:  PIC182550_BME688-ENS160.STA
